@@ -1,15 +1,53 @@
-﻿<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BOOMART - Employee of the Afterlife</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>BOOMART — Employee of the Afterlife</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
 </head>
 <body>
-  <main>
-    <h1>BOOMART 👻</h1>
-    <p>Welcome to the afterlife.</p>
-    <p>The haunted store is under construction.</p>
+  <main class="panel">
+    <div class="ghost" aria-hidden="true">👻</div>
+    <h1>BOOMART</h1>
+    <p class="tagline">The afterlife has terrible customer service.</p>
+
+    <section id="loginView">
+      <h2>Staff entrance</h2>
+      <form id="loginForm">
+        <label>Username <input name="username" autocomplete="username" required></label>
+        <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
+        <button type="submit">Enter the store</button>
+      </form>
+      <button type="button" class="link" id="showSignup">Create an account</button>
+    </section>
+
+    <section id="signupView" hidden>
+      <h2>Join our staff (forever)</h2>
+      <form id="signupForm">
+        <label>Username <input name="username" pattern="[a-z][a-z0-9_]{2,23}" required></label>
+        <label>Password <input name="password" type="password" minlength="10" maxlength="128" required></label>
+        <button type="submit">Sign the contract</button>
+      </form>
+      <button type="button" class="link" id="showLogin">Back to login</button>
+    </section>
+
+    <section id="homeView" hidden>
+      <h2>Welcome, <span id="who"></span></h2>
+      <p id="access"></p>
+      <p class="small">Your account is authenticated. The real store and support desk come in Step 03.</p>
+      <button id="logout" type="button">Log out</button>
+    </section>
+
+    <section id="ghostView" hidden aria-live="polite">
+      <h2>YOU HAVE BEEN GHOSTED</h2>
+      <p>Your soul failed the hiring interview.</p>
+      <p class="countdown"><span id="seconds">13</span>s</p>
+      <p>When the clock hits zero, both your session and temporary account disappear.</p>
+    </section>
+
+    <p id="message" role="status" aria-live="polite"></p>
   </main>
 </body>
 </html>
