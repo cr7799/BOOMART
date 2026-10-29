@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c10">
+  <title>BOOMART | Registration</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/auth.js" defer></script>
+</head>
+<body data-page="register" class="entry-page">
+  <main class="entry-center">
+    <a class="entry-mark" href="/" aria-label="BOOMART home">
+      <span class="brand-crest" aria-hidden="true">✣</span>
+      <span class="entry-wordmark">BOOMART</span>
+      <span class="brand-subtitle">The supernatural store</span>
+    </a>
+    <section class="entry-card" aria-labelledby="entry-title">
+      <span class="card-ornament" aria-hidden="true"></span>
+      <h1 id="entry-title">New soul, new contract.</h1>
+      <p class="muted center">Our staff retention record is frightening.</p>
+      <form id="signupForm" class="form-stack">
+        <label for="username">Username
+          <input id="username" name="username" autocomplete="username" pattern="[a-z][a-z0-9_]{2,23}" minlength="3" maxlength="24" required placeholder="Choose a username">
+        </label>
+        <label for="password">Password
+          <input id="password" name="password" type="password" autocomplete="new-password" minlength="4" maxlength="128" required placeholder="At least 4 characters">
+        </label>
+        <button class="primary" type="submit">Sign the contract</button>
+      </form>
+      <p id="message" class="feedback center" role="status" aria-live="polite"></p>
+      <p class="footnote center">Already employed? <a href="/">Back to login</a></p>
+    </section>
+    <p class="entry-bottom">BOOMART hires beyond the grave.</p>
+  </main>
+</body>
+</html>

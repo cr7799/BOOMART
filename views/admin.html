@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#100c13"><title>Management | BOOMART</title>
+<link rel="stylesheet" href="/style.css"><script src="/admin-client.js" defer></script></head>
+<body data-page="admin"><header class="site-header"><div class="site-header-inner">
+<a href="/admin" class="wordmark">BOO<span>MART</span></a>
+<nav aria-label="Management navigation"><a href="/admin" class="current">Management</a><a href="/shop">Store</a></nav>
+<button class="signout" id="logout" type="button">Log out</button></div></header>
+<main class="container admin-page"><section class="page-heading admin-heading">
+<p class="eyebrow">MANAGEMENT OF THE DAMNED</p><h1>The Executive Crypt</h1>
+<p class="muted">The house has a price for every soul.</p></section>
+<section class="admin-stats" aria-label="Executive overview">
+<article class="panel"><span>Living employees</span><strong>0</strong><small>HR is delighted</small></article>
+<article class="panel"><span>Ghost complaints</span><strong>404</strong><small>Most were ignored</small></article>
+<article class="panel"><span>Company allowance</span><strong id="managerBalance">...</strong><small>The Great Carrot Scandal</small></article></section>
+<div class="panel admin-notice" id="adminOverview" role="status">Consulting payroll's crypt...</div>
+<div class="admin-workspace">
+<section class="admin-tools" aria-label="Management tools">
+<div class="admin-section-heading"><h2>Corporate operations</h2><p class="muted">All departments are open. Regrets are nonrefundable.</p></div>
+<div class="admin-operations">
+<article class="panel"><span class="admin-tool-tag">SECURITY</span><h3>Secret Admin Vault</h3><p>Unauthorized spirits will be prosecuted.</p><button class="admin-action" type="button" data-action="vault">Open vault</button></article>
+<article class="panel"><span class="admin-tool-tag">RECORDS</span><h3>Export Database</h3><p>Corporate archive. Property of the Eternal Board.</p><a class="admin-action" data-action="export" href="/api/admin/export" download>Export confidential database</a></article>
+<article class="panel"><span class="admin-tool-tag">PERSONNEL</span><h3>Remove Myself</h3><p>Management doesn't accept resignations.</p><button class="admin-action" type="button" data-action="self">Remove account</button></article>
+<article class="panel"><span class="admin-tool-tag">PERSONNEL</span><h3>Delete All Users</h3><p>The official solution to employee complaints.</p><button class="admin-action" type="button" data-action="delete">Delete everybody</button></article>
+<article class="panel"><span class="admin-tool-tag">RECORDS</span><h3>Administration Audit Log</h3><p>Disasters are recorded with suspicious accuracy.</p><button class="admin-action" type="button" data-action="audit">View last shift logs</button></article>
+<article class="panel"><span class="admin-tool-tag">LEGACY IT</span><h3>Deprecated Admin API Docs</h3><p>Documentation left behind by our deceased developers.</p><button class="admin-action" type="button" data-action="docs">View old endpoints</button></article>
+</div>
+<div class="admin-section-heading"><h2>Questionable settings</h2><p class="muted">Changes here are not covered by the management insurance policy.</p></div>
+<div class="admin-operations">
+<article class="panel"><span class="admin-tool-tag">CONFIGURATION</span><h3>Danger Zone Settings</h3><p>Enable undocumented behavior or ruin the lighting.</p>
+<div class="admin-button-stack"><button class="admin-action" data-action="debug">Toggle legacy debug headers</button><button class="admin-action" data-action="dark">Dark mode of doom</button></div></article>
+<article class="panel"><span class="admin-tool-tag">OFFICE SERVICES</span><h3>Workplace Maintenance</h3><p>Monthly ledger, receipts, and a printer on its last haunting.</p>
+<div class="admin-button-stack"><button class="admin-action" data-action="ghost-accounting">Paranormal accounting</button><button class="admin-action" data-action="haunt-printer">Haunt the printer</button></div></article>
+<article class="panel"><span class="admin-tool-tag">ADOPTIONS</span><h3>Adopt a Ghost</h3><p>Give an emotionally unstable spirit a new home.</p><button class="admin-action" data-action="adopt">Adopt now</button></article>
+<article class="panel"><span class="admin-tool-tag">EMERGENCY</span><h3>Self Destruct</h3><p>Warning: structural integrity not guaranteed.</p><button class="admin-action" data-action="self-destruct">SELF DESTRUCT</button></article>
+</div>
+<section class="panel summoning-panel"><p class="eyebrow">UNINSURED ACTIVITY</p><h2>The Summoning Chamber</h2>
+<p>Seriously. This department has caused permanent employee dissatisfaction.</p>
+<button class="primary curse-button" data-action="summon">DO NOT SUMMON</button></section>
+</section>
+<aside class="panel admin-console" aria-label="Operations console"><div class="admin-console-heading"><span class="console-live-indicator" aria-hidden="true"></span>
+<div><h2>Management terminal</h2><p>Responses from the selected operation</p></div></div>
+<div class="admin-console-context" id="consoleContext">CRYPT TERMINAL · STANDBY</div>
+<pre id="adminOutput" tabindex="0" aria-live="polite">No operations performed. Productivity remains high.</pre>
+<p id="message" class="feedback" role="status" aria-live="polite"></p>
+
+</aside></div></main><footer class="footer">BOOMART · Your next promotion may be a curse</footer></body></html>

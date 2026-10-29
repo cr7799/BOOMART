@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 520" role="img" aria-labelledby="title desc">
+<title id="title">The ghost in BOOMART's darkness</title><desc id="desc">A spectral, ultraviolet smiling ghost with flickering eyes and wisps of enchanted mist.</desc>
+<defs>
+  <radialGradient id="shroud" cx="48%" cy="39%" r="62%"><stop offset="0" stop-color="#4a206b" stop-opacity=".56"/><stop offset=".48" stop-color="#2f0d4c" stop-opacity=".3"/><stop offset="1" stop-color="#000" stop-opacity="0"/></radialGradient>
+  <linearGradient id="cloth" x1=".16" y1=".05" x2=".85" y2="1"><stop stop-color="#f7e4ff"/><stop offset=".33" stop-color="#b780eb"/><stop offset=".73" stop-color="#502076"/><stop offset="1" stop-color="#210936"/></linearGradient>
+  <linearGradient id="eye" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#fff"/><stop offset=".6" stop-color="#d8a0ff"/><stop offset="1" stop-color="#8c36ed"/></linearGradient>
+  <filter id="blur"><feGaussianBlur stdDeviation="13"/></filter>
+  <filter id="glow" x="-.5" y="-.5" width="2" height="2"><feGaussianBlur stdDeviation="7" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+</defs>
+<ellipse cx="250" cy="270" rx="205" ry="208" fill="url(#shroud)"/>
+<g opacity=".53" filter="url(#blur)" fill="none" stroke="#8a3bd2" stroke-width="17">
+<path d="M75 369c-24 2-55 25-58 52m409-302c36-38 46-42 56-67M46 193c-36-4-40-31-35-43M419 430c51 28 65 5 72-9"/>
+</g>
+<path d="M128 366 Q91 295 124 225 C125 143 174 91 245 91C329 91 376 148 377 231C379 277 376 337 414 368Q397 382 370 368Q368 422 335 429Q317 435 293 402Q282 458 252 457Q220 457 210 408Q184 446 163 433Q137 420 139 374Q123 383 105 374Z"
+ fill="url(#cloth)" fill-opacity=".93" stroke="#dcadff" stroke-width="7" stroke-linejoin="round" filter="url(#glow)"/>
+<path d="M154 203Q159 132 230 125Q314 112 348 190" fill="none" stroke="#fff5ff" stroke-opacity=".58" stroke-width="8" stroke-linecap="round"/>
+<path d="M153 257Q165 217 204 227Q229 236 230 272Q210 299 164 293Q143 286 153 257Z" fill="#170523"/>
+<path d="M266 273Q272 221 320 223Q353 238 353 277Q342 301 302 299Q278 294 266 273Z" fill="#170523"/>
+<path d="M157 248Q173 229 196 231Q212 239 218 259L211 279Q178 294 155 276Z" fill="url(#eye)" filter="url(#glow)"/>
+<path d="M284 253Q296 229 320 231Q341 243 344 270Q319 291 283 275Z" fill="url(#eye)" filter="url(#glow)"/>
+<circle cx="190" cy="251" r="6" fill="#fff"/><circle cx="324" cy="255" r="6" fill="#fff"/>
+<path d="M216 323Q247 335 283 325Q313 320 336 311Q327 351 296 371Q268 388 244 377Q216 364 201 329Z" fill="#1e052e" stroke="#e5b1ff" stroke-width="4"/>
+<path d="M219 333L230 351L243 335L254 355L268 338L285 355L298 335L310 344L329 317" fill="none" stroke="#f8e7ff" stroke-width="10" stroke-linejoin="round" stroke-linecap="round"/>
+<g fill="#e6c1ff" opacity=".65"><circle cx="91" cy="149" r="4"/><circle cx="408" cy="175" r="3"/><circle cx="438" cy="341" r="4"/><circle cx="66" cy="316" r="3"/></g>
+</svg>

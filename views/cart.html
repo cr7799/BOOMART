@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c10"><title>Your Basket | BOOMART</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body data-page="cart">
+<!--BOOMART_SHOP_HEADER-->
+<main class="container shop-cart-page">
+  <div class="page-heading atmospheric-heading"><p class="eyebrow">BOOMART · MIDNIGHT MARKET</p>
+    <h1>Your haunted basket <span id="basketCount" class="basket-count"></span></h1>
+    <p class="muted">Everything you picked up, and a few things that may have followed you home.</p>
+  </div>
+  <div class="cart-layout">
+    <div class="cart-main">
+      <section class="panel basket-panel" aria-label="Basket contents">
+        <div class="basket-heading"><h2>Items in your basket</h2><a class="small-link" href="/shop">Continue shopping</a></div>
+        <div id="cartContents" class="basket-lines" aria-live="polite"></div>
+      </section>
+      <section class="panel dispatch-panel" aria-label="Delivery choices">
+        <h2>Dispatch office</h2><div id="shippingOptions" class="checkout-form"></div>
+      </section>
+    </div>
+    <aside class="panel basket-checkout" aria-label="Order summary">
+      <span class="eyebrow">THE MIDNIGHT REGISTER</span>
+      <h2>Order summary</h2>
+      
+      <div id="priceSummary" class="basket-totals"></div>
+      <form id="couponForm" class="checkout-form" hidden>
+        <label for="couponCode">Gift code or promotional incantation</label>
+        <div class="inline-action"><input id="couponCode" name="code" type="text" maxlength="64"
+          autocomplete="off" placeholder="Enter your code" required>
+          <button class="primary" type="submit">Apply</button></div>
+      </form>
+      <button class="primary checkout-pay" type="button" id="checkoutButton" disabled>Place order</button>
+      <p id="message" class="feedback" role="status" aria-live="polite"></p>
+      <p class="basket-fineprint">Prices and payment are confirmed by the midnight cashier.</p>
+    </aside>
+  </div>
+</main>
+<footer class="footer">BOOMART · Transactions are watched by unpaid spirits</footer>
+</body></html>

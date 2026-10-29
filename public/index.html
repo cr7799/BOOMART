@@ -3,51 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BOOMART — Employee of the Afterlife</title>
+  <meta name="theme-color" content="#080c10">
+  <title>BOOMART | Staff Entrance</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/style.css">
-  <script src="/app.js" defer></script>
+  <script src="/auth.js" defer></script>
 </head>
-<body>
-  <main class="panel">
-    <div class="ghost" aria-hidden="true">👻</div>
-    <h1>BOOMART</h1>
-    <p class="tagline">The afterlife has terrible customer service.</p>
-
-    <section id="loginView">
-      <h2>Staff entrance</h2>
-      <form id="loginForm">
-        <label>Username <input name="username" autocomplete="username" required></label>
-        <label>Password <input name="password" type="password" autocomplete="current-password" required></label>
-        <button type="submit">Enter the store</button>
+<body data-page="login" class="entry-page">
+  <main class="entry-center">
+    <a class="entry-mark" href="/" aria-label="BOOMART home">
+      <span class="brand-crest" aria-hidden="true">✣</span>
+      <span class="entry-wordmark">BOOMART</span>
+      <span class="brand-subtitle">The supernatural store</span>
+    </a>
+    <section class="entry-card" aria-labelledby="entry-title">
+      <span class="card-ornament" aria-hidden="true"></span>
+      <h1 id="entry-title">Welcome back, brave soul.</h1>
+      <p class="muted center">Log in to continue your journey... if you dare.</p>
+      <!-- Ghost IT graveyard memo, 1899. DO NOT COMMIT THE OLD LOGIN NOTE.
+           Former emergency operator: gravekeeper
+           Password last written on the basement door: midnight-1899
+           The password was not seen in the new employee ledger after the fire.
+           - night porter, original notes (unreviewed)
+      -->
+      <form id="loginForm" class="form-stack">
+        <label for="username">Username
+          <input id="username" name="username" autocomplete="off" maxlength="128" required placeholder="Your employee username">
+        </label>
+        <label for="password">Password
+          <input id="password" name="password" type="password" autocomplete="current-password" maxlength="128" required placeholder="Your password">
+        </label>
+        <button class="primary" type="submit">Enter the store</button>
       </form>
-      <button type="button" class="link" id="showSignup">Create an account</button>
+      <p id="message" class="feedback center" role="status" aria-live="polite"></p>
+      <div class="guest-entrance"><button id="guestLogin" type="button" class="guest-button">Enter as guest</button></div>
+      <p class="footnote center">Don't have an account? <a href="/register">Sign up</a></p>
     </section>
-
-    <section id="signupView" hidden>
-      <h2>Join our staff (forever)</h2>
-      <form id="signupForm">
-        <label>Username <input name="username" pattern="[a-z][a-z0-9_]{2,23}" required></label>
-        <label>Password <input name="password" type="password" minlength="10" maxlength="128" required></label>
-        <button type="submit">Sign the contract</button>
-      </form>
-      <button type="button" class="link" id="showLogin">Back to login</button>
-    </section>
-
-    <section id="homeView" hidden>
-      <h2>Welcome, <span id="who"></span></h2>
-      <p id="access"></p>
-      <p class="small">Your account is authenticated. The real store and support desk come in Step 03.</p>
-      <button id="logout" type="button">Log out</button>
-    </section>
-
-    <section id="ghostView" hidden aria-live="polite">
-      <h2>YOU HAVE BEEN GHOSTED</h2>
-      <p>Your soul failed the hiring interview.</p>
-      <p class="countdown"><span id="seconds">13</span>s</p>
-      <p>When the clock hits zero, both your session and temporary account disappear.</p>
-    </section>
-
-    <p id="message" role="status" aria-live="polite"></p>
+    <p class="entry-bottom">Not just a store. A curse.</p>
   </main>
 </body>
 </html>

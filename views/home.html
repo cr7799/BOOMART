@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c10"><title>Home | BOOMART</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body data-page="home">
+  <header class="site-header"><div class="site-header-inner">
+    <a href="/home" class="wordmark">BOOMART</a>
+    <nav aria-label="Main navigation"><a class="current" href="/home">Home</a><a href="/shop">Shop</a><a href="/support">Support</a></nav>
+    <button class="signout" id="logout" type="button">Log out</button>
+  </div></header>
+  <main class="container">
+    <section class="page-heading atmospheric-heading"><p class="eyebrow">THE NIGHT SHIFT</p>
+      <h1>Welcome back, <span id="username">...</span></h1>
+      <p class="muted">Night shift is not a myth. It's a lifestyle.</p>
+    </section>
+    <div class="overview-layout">
+      <article class="panel"><h2>Your account</h2>
+        <dl class="facts"><div><dt>Username</dt><dd id="accountName">—</dd></div>
+          <div><dt>Support tickets</dt><dd id="ticketCount">—</dd></div></dl>
+      </article>
+      <article class="panel companion-panel"><h2>Your assigned ghost</h2>
+        <p class="muted">Company policy requires all night staff to have a haunting companion.</p>
+        <div class="ghost-profile"><div class="ghost-portrait" aria-hidden="true"></div>
+          <div><strong id="ghostName">Checking the registry...</strong><p id="ghostEpitaph" class="muted"></p></div>
+        </div>
+      </article>
+    </div>
+    <div class="quick-links">
+      <a href="/shop"><span class="quick-icon" aria-hidden="true">◈</span><strong>Explore the shop</strong><span>Objects with rather unfortunate histories</span></a>
+      <a href="/support"><span class="quick-icon" aria-hidden="true">✉</span><strong>Customer support</strong><span>Our archivists are rarely available</span></a>
+    </div>
+    <p id="message" class="feedback" role="status" aria-live="polite"></p>
+  </main>
+  <footer class="footer">BOOMART · Open beyond business hours</footer>
+</body>
+</html>

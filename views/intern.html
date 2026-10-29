@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#13051f"><title>The Unpaid Dimension | BOOMART</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="stylesheet" href="/style.css">
+<script src="/intern-client.js" defer></script></head>
+<body class="intern-page" data-page="intern">
+<main class="intern-market">
+  <header class="intern-topbar"><span class="intern-brand">BOOMART</span><span class="guest-badge">EXORCIST INTERN · NO BADGE</span>
+    <button class="signout" id="internLogout" type="button">Leave the Night Shift</button></header>
+  <section class="intern-main-hero">
+    <p class="eyebrow">UNPAID DIVISION · VISITOR EXPERIENCES</p>
+    <h1>Even the afterlife has an unpaid internship.</h1>
+    <p>The management says shopping is possible in this dimension. The invoices say otherwise.</p>
+    <div class="intern-actions"><button type="button" id="internViewStore">Browse the Haunted Market</button>
+      <button type="button" id="internRumors">Ask a Whispering Ghost</button>
+      <button type="button" id="internBadge">Request Staff Badge</button></div>
+    <p class="intern-rumor" id="internMessage" role="status" aria-live="polite"></p>
+  </section>
+  <section id="internShop" aria-labelledby="internProductsHeading">
+    <div class="intern-toolbar"><div><p class="eyebrow">YOUR UNOFFICIAL ASSIGNMENTS</p>
+      <h2 id="internProductsHeading">The Haunted Market</h2></div>
+      <input id="internSearch" type="search" placeholder="Search curiosities..." aria-label="Search haunted products">
+    </div>
+    <div id="internCatalog" class="intern-catalog"></div>
+  </section>
+  <section class="intern-minipanel"><h2>Night Department</h2>
+    <p>The internship handbook is illegible. The support hotline is operated by a sleeping skeleton.</p>
+    <button type="button" id="internSupport">Ask the support ghost</button>
+    <button type="button" id="internContract">Read the contract</button>
+    <p id="internSideJoke" class="intern-rumor" role="status"></p>
+  </section>
+  <p class="center muted">Department policy: exits are theoretical.</p>
+</main>
+<div id="internPayment" class="intern-payment-overlay" hidden role="dialog" aria-modal="true" aria-labelledby="internPaymentTitle">
+  <section class="intern-payment-card">
+    <img src="/assets/doom-face.svg" alt="A ghostly payment clerk">
+    <h2 id="internPaymentTitle">Processing payment...</h2>
+    <div id="internPaymentSpinner" class="intern-spinner" aria-hidden="true"></div>
+    <p id="internPaymentMessage" class="intern-payment-message" role="status" aria-live="polite">Contacting the afterlife...</p>
+    <p id="internPaymentItem" class="muted"></p>
+  </section>
+</div>
+</body></html>

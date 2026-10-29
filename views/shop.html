@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en"><head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080c10"><title>Shop | BOOMART</title>
+  <link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body data-page="shop">
+  <!--BOOMART_SHOP_HEADER-->
+  <main class="container">
+    <div class="page-heading atmospheric-heading"><p class="eyebrow">CURIOSITIES OF THE AFTERLIFE</p>
+      <h1>Our spooky collection</h1><p class="muted">Not just products... it's an experience.</p>
+    </div>
+    <section class="shop-panel" aria-label="Store controls">
+      
+      <div class="shop-filters">
+        <label>Search shelves <input type="search" id="productSearch" placeholder="Try tea, socks, relics..."></label>
+        <label>Department <select id="productCategory"></select></label>
+        <label>Order by <select id="productSort"><option value="name">Name</option>
+          <option value="price-asc">Price: low to high</option><option value="price-desc">Price: high to low</option></select></label>
+      </div>
+    </section>
+    <section id="products" class="product-grid" aria-label="Products"></section>
+    <section class="panel recent-shop-orders"><h2>Recent deliveries</h2><div id="recentOrders"></div></section>
+    <p id="message" class="feedback" role="status" aria-live="polite"></p>
+  </main>
+  <footer class="footer">BOOMART · All sales are final until further notice from the dead</footer>
+</body></html>
