@@ -1,0 +1,37 @@
+name: boomart
+services:
+  ctf:
+    image: boomart-ctf:1.0.0
+    build:
+      context: .
+      target: runtime
+    init: true
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      HOST: 0.0.0.0
+      PORT: "3000"
+      DB_PATH: /app/data/boomart.sqlite
+      FLAG: ${FLAG:?Set the FLAG environment variable before starting}
+      SESSION_SECRET: ${SESSION_SECRET:?Set a random SESSION_SECRET before starting}
+      COOKIE_SECURE: ${COOKIE_SECURE:-0}
+      TRUST_PROXY: ${TRUST_PROXY:-0}
+      STARTER_PASSWORD: ${STARTER_PASSWORD:-nightshift-13}
+    ports:
+      - "127.0.0.1:${BOOMART_PORT:-3000}:3000"
+    volumes:
+      - boomart_data:/app/data
+    read_only: true
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=32m
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    mem_limit: 512m
+    cpus: 1.0
+    pids_limit: 128
+    stop_grace_period: 15s
+
+volumes:
+  boomart_data:

@@ -1,0 +1,29 @@
+# Never send local data, session signing secrets, Git history or dependencies
+# to the Docker build context.
+.git/
+.gitignore
+node_modules/
+data/
+.env
+.env.*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.db
+*.db-*
+*.log
+coverage/
+*.bak
+*.backup
+*.tmp
+*.tar
+*.tar.gz
+*.zip
+!views/cat-export.zip
+*.md
+.DS_Store
+.vscode/
+.idea/
+# Author-only testing material is not needed in the production image.
+boomart_verify*.mjs
+BOOMART_*

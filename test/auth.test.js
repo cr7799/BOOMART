@@ -547,12 +547,30 @@ test('auth, ghost IDOR, chained recovery, admin puzzles, curses, and 13-second g
     assert.equal(untouched.response.status, 200);
     assert.equal(untouched.body.energy, 0);
 
+    const firstTapStartedAt = Date.now();
     const firstTap = await post('/api/rituals/manual-tap', {}, managerJar);
     assert.equal(firstTap.response.status, 200);
     assert.ok(firstTap.body.energy > 0 && firstTap.body.energy < 10);
     assert.equal(firstTap.body.released, false);
     const tooQuick = await post('/api/rituals/manual-tap', {}, managerJar);
-    assert.equal(tooQuick.response.status, 429);
+    const tapElapsedMs = Date.now() - firstTapStartedAt;
+
+    assert.ok(
+      [200, 429].includes(tooQuick.response.status),
+      `Unexpected tap response: ${tooQuick.response.status}`
+    );
+
+    if (tapElapsedMs < 165) {
+      assert.equal(
+        tooQuick.response.status,
+        429,
+        'A tap repeated within 165ms must be rejected'
+      );
+    }
+
+    if (tooQuick.response.status === 429) {
+      assert.equal(tooQuick.body.error, 'TOO_FAST');
+    }
     await delay(1000);
     const decayed = await request('/api/rituals/status', {}, managerJar);
     assert.ok(decayed.body.energy < firstTap.body.energy);
