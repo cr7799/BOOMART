@@ -25,7 +25,7 @@ test('auth, ghost IDOR, chained recovery, admin puzzles, curses, and 13-second g
   const port = await openPort();
   const child = spawn(process.execPath, ['src/server.js'], {
     cwd: process.cwd(),
-    env: { ...process.env, PORT: String(port), HOST: '127.0.0.1', DB_PATH: join(directory, 'test.sqlite'), NODE_ENV: 'test', FLAG: 'HAUNTED{INTEGRATION_TEST_ONLY_28f9c6}' },
+    env: { ...process.env, PORT: String(port), HOST: '127.0.0.1', DB_PATH: join(directory, 'test.sqlite'), NODE_ENV: 'test', FLAG: 'ENSATE{INTEGRATION_TEST_ONLY_28f9c6}' },
     stdio: ['ignore', 'pipe', 'pipe']
   });
   let serverOutput = '';
@@ -102,7 +102,7 @@ test('auth, ghost IDOR, chained recovery, admin puzzles, curses, and 13-second g
     assert.match(screamer.headers.get('content-type') || '', /image\/webp/);
     const css = await fetch(base + '/style.css');
     assert.equal(css.status, 200);
-    assert.match(await css.text(), /HAUNTED\{this_is_just_a_decorative_ghost_not_your_flag\}/);
+    assert.match(await css.text(), /ENSATE\{this_is_just_a_decorative_ghost_not_your_flag\}/);
     for (const [probe, text] of [['/wp-admin', 'WORDPRESS EXORCISM'],
       ['/.env', 'SEALED VIAL'], ['/phpmyadmin', 'CRYPT DATABASE'],
       ['/server-status', 'THE SLEEPING SERVER'], ['/sitemap.xml', 'THE LOST MAP']]) {
@@ -719,7 +719,7 @@ test('auth, ghost IDOR, chained recovery, admin puzzles, curses, and 13-second g
     assert.equal(winner.response.status, 200);
     assert.equal(winner.body.receipt.productId, 'golden-carrot');
     assert.equal(winner.body.receipt.charged, 0);
-    assert.equal(winner.body.receipt.flag, 'HAUNTED{INTEGRATION_TEST_ONLY_28f9c6}');
+    assert.equal(winner.body.receipt.flag, 'ENSATE{INTEGRATION_TEST_ONLY_28f9c6}');
     assert.equal((await request('/api/shop/wallet', {}, managerJar)).body.balance, 100);
     assert.equal((await post('/api/shop/checkout', {}, managerJar)).response.status, 409);
     assert.equal((await post('/api/shop/wallet/credit', { balance: 9999 }, managerJar)).response.status, 403);

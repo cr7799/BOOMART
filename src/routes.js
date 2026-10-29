@@ -250,7 +250,7 @@ export function registerRoutes(app, requireCsrf) {
 
   app.get('/api/admin/vault', ...staffOnly, (_req, res) => {
     res.json({ title: 'TOP SECRET ADMIN VAULT',
-      flag: 'HAUNTED{THE_VAULT_CONTAINS_ONLY_DUST}',
+      flag: 'ENSATE{THE_VAULT_CONTAINS_ONLY_DUST}',
       warning: 'The vault was last audited by a blind bat. Complaints are accepted in triplicate.' });
   });
 
@@ -526,7 +526,7 @@ export function registerRoutes(app, requireCsrf) {
     });
   });
 
-  const receiptFlag = process.env.FLAG || `HAUNTED{DEV_${randomBytes(16).toString('hex')}}`;
+  const receiptFlag = process.env.FLAG || `ENSATE{DEV_${randomBytes(16).toString('hex')}}`;
   function requireShopper(req, res, next) {
     if (!req.user) return res.status(401).json({ error: 'NOT_AUTHENTICATED' });
     if (req.user.status !== 'ACTIVE') return res.status(423).json({ error: 'ACCOUNT_CURSED' });
