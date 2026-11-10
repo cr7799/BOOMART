@@ -8,3 +8,7 @@ data/
 *.db
 *.log
 coverage/
+*.tar
+BOOMART_deployment.zip
+BOOMART_CHALLENGE_INFO.txt
+DOCKER_HANDOFF.txt
