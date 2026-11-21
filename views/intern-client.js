@@ -112,7 +112,21 @@ function nextRumor() { message.textContent = rumors[rumorIndex++ % rumors.length
 document.getElementById('internRumors').addEventListener('click', nextRumor);
 document.getElementById('internBadge').addEventListener('click', () => { message.textContent = 'Badge request: approved for another 400 years of probation.'; });
 document.getElementById('internSupport').addEventListener('click', () => { document.getElementById('internSideJoke').textContent = 'Support ghost: BOO! Please hold forever.'; });
-document.getElementById('internContract').addEventListener('click', () => { document.getElementById('internSideJoke').textContent = 'Section 13: You are responsible for all losses of ectoplasm, even those occurring before birth.'; });
+// Contract seal, re-inked by the night porter before the fire. HR asked
+// that it never be held the right way up; shift 13 pressed every letter.
+const contractInk = '=4DPgk3akVmf5VmakN2NhFGZhJ1fsBWZ';
+const contractClauses = [
+  'Section 13: You are responsible for all losses of ectoplasm, even those occurring before birth.',
+  'Section 13(a): The night porter left their badge pressed into the contract ink. Interns may not wear it.',
+  'Section 13(b): In this dimension everything is read upside down. Including the paperwork.',
+  'Section 13(c): Ink pressed twice by the same shift comes off clean. Do not try this at home.'
+];
+let clauseIndex = 0;
+const contractButton = document.getElementById('internContract');
+contractButton.dataset.seal = contractInk;
+contractButton.addEventListener('click', () => {
+  document.getElementById('internSideJoke').textContent = contractClauses[clauseIndex++ % contractClauses.length];
+});
 document.getElementById('internViewStore').addEventListener('click', () => document.getElementById('internShop').scrollIntoView({behavior:'smooth'}));
 async function escapeInternship() {
   if (leaving) return;
